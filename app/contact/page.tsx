@@ -2,60 +2,51 @@ import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-xl">
-      <h1 className="text-4xl mb-12">Contact Us</h1>
-      <p className="text-[#666] mb-12 text-sm max-w-md">Our team is available Monday through Friday for inquiries regarding job postings, support, or partnership opportunities. Expect a response within 48 hours.</p>
+    <div className="max-w-md">
+      <h1 className="text-xl font-medium mb-12">Contact Us</h1>
+      <p className="text-[#666] mb-12 text-sm max-w-sm">Expect a response within 48 hours for inquiries regarding postings, support, or partnership.</p>
 
-      <form className="space-y-12">
-        <div className="space-y-2">
-          <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-[#999]">Your Name</label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
+      <form className="space-y-8">
+        <div className="space-y-1">
+          <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-widest text-[#999]">Name</label>
+          <input
+            type="text"
+            id="name"
             placeholder="Jane Doe"
-            className="w-full bg-transparent border-b border-[#eee] py-4 text-xl focus:outline-none focus:border-black transition-colors"
+            className="w-full bg-transparent border-b border-[#eee] py-2 text-sm focus:outline-none focus:border-black transition-colors"
             required
           />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-[#999]">Email Address</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
+        <div className="space-y-1">
+          <label htmlFor="email" className="text-[10px] font-bold uppercase tracking-widest text-[#999]">Email</label>
+          <input
+            type="email"
+            id="email"
             placeholder="jane@example.com"
-            className="w-full bg-transparent border-b border-[#eee] py-4 text-xl focus:outline-none focus:border-black transition-colors"
+            className="w-full bg-transparent border-b border-[#eee] py-2 text-sm focus:outline-none focus:border-black transition-colors"
             required
           />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-[#999]">Message</label>
-          <textarea 
-            id="message" 
-            name="message" 
+        <div className="space-y-1">
+          <label htmlFor="message" className="text-[10px] font-bold uppercase tracking-widest text-[#999]">Message</label>
+          <textarea
+            id="message"
             rows={4}
-            placeholder="How can we help you today?"
-            className="w-full bg-transparent border-b border-[#eee] py-4 text-xl focus:outline-none focus:border-black transition-colors resize-none"
+            placeholder="..."
+            className="w-full bg-transparent border-b border-[#eee] py-2 text-sm focus:outline-none focus:border-black transition-colors resize-none"
             required
           />
         </div>
 
-        <button 
-          type="submit" 
-          className="bg-black text-white px-12 py-5 text-sm font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity"
+        <button
+          type="submit"
+          className="bg-black text-white px-8 py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-80"
         >
-          Send Inquiry
+          Send
         </button>
       </form>
-
-      <div className="mt-24">
-        <Link href="/" className="text-sm font-bold uppercase tracking-widest hover:opacity-60 transition-opacity">
-          &larr; Back to Overview
-        </Link>
-      </div>
     </div>
   );
 }

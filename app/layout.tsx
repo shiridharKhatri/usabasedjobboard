@@ -25,29 +25,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
-        <header className="max-w-[1100px] mx-auto px-6 pt-12 pb-24">
-          <div className="flex justify-between items-baseline">
-            <Link href="/" className="text-2xl font-serif tracking-tight font-medium">
-              Stateside Careers
-            </Link>
-            <nav className="flex gap-8 text-sm font-medium uppercase tracking-widest text-[#666]">
-              <Link href="/jobs" className="hover:text-black transition-colors">Browse</Link>
-              <Link href="/post-job" className="hover:text-black transition-colors">Post a Job</Link>
-              <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
-            </nav>
-          </div>
-        </header>
+      <body className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white flex">
+        {/* Sidebar */}
+        <aside className="w-[220px] fixed h-screen p-8 flex flex-col gap-12 border-r border-transparent">
+          <Link href="/" className="text-xl font-serif tracking-tight font-medium mb-4">
+            Stateside Careers
+          </Link>
+          
+          <nav className="flex flex-col gap-4 text-sm tracking-wide text-[#666]">
+            <Link href="/" className="hover:text-black transition-colors">Home</Link>
+            <Link href="/jobs" className="hover:text-black transition-colors">Browse Jobs</Link>
+            <Link href="/post-job" className="hover:text-black transition-colors">Post Job / Post Article</Link>
+            <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
+          </nav>
 
-        <main className="max-w-[1100px] mx-auto px-6 pb-24">
+          <div className="mt-auto">
+            <p className="text-[10px] text-[#999] uppercase tracking-widest leading-loose">
+              &copy; {new Date().getFullYear()}<br />
+              Stateside Careers
+            </p>
+          </div>
+        </aside>
+
+        {/* Main Content */}
+        <main className="flex-1 ml-[220px] p-8 max-w-4xl">
           {children}
         </main>
-
-        <footer className="max-w-[1100px] mx-auto px-6 pb-12 mt-auto">
-          <p className="text-xs text-[#999] uppercase tracking-widest font-medium">
-            &copy; {new Date().getFullYear()} Stateside Careers. Built for clarity.
-          </p>
-        </footer>
       </body>
     </html>
   );

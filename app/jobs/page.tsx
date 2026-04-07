@@ -33,28 +33,22 @@ const MOCK_JOBS = [
 
 export default function JobsPage() {
   return (
-    <div className="max-w-3xl">
-      <h1 className="text-4xl mb-16">Selected Openings</h1>
+    <div className="max-w-2xl">
+      <h1 className="text-xl font-medium mb-12">Selected Openings</h1>
       
-      <div className="space-y-16">
+      <div className="space-y-12">
         {MOCK_JOBS.map((job) => (
           <div key={job.id} className="group">
             <Link href={`/jobs/${job.id}`} className="block">
-              <div className="flex justify-between items-baseline mb-2">
-                <h2 className="text-xl group-hover:underline decoration-1 underline-offset-4">{job.title}</h2>
-                <span className="text-xs uppercase tracking-widest text-[#999]">{job.location}</span>
+              <div className="flex justify-between items-baseline mb-1">
+                <h2 className="text-base font-bold group-hover:text-[#666] transition-colors">{job.title}</h2>
+                <span className="text-[10px] uppercase tracking-widest text-[#999]">{job.location}</span>
               </div>
-              <p className="text-sm font-medium text-[#666] mb-4 uppercase tracking-wider">{job.company}</p>
-              <p className="text-[#444] text-sm leading-relaxed max-w-2xl">{job.description}</p>
+              <p className="text-[11px] font-bold text-[#999] mb-3 uppercase tracking-wider">{job.company}</p>
+              <p className="text-[#444] text-sm leading-relaxed">{job.description}</p>
             </Link>
           </div>
         ))}
-      </div>
-
-      <div className="mt-24">
-        <Link href="/" className="text-sm font-bold uppercase tracking-widest hover:opacity-60 transition-opacity">
-          &larr; Back to Overview
-        </Link>
       </div>
     </div>
   );
